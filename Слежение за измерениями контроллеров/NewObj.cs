@@ -15,8 +15,6 @@ namespace Слежение_за_измерениями_контроллеров
         {
             InitializeComponent();
             this.Text = "Добавление нового объекта";
-            this.buttonSHLR.Enabled = false;
-            this.buttonZN.Enabled = false;
         }
 
         void UpdateSHR_LR(string ID)
@@ -29,7 +27,7 @@ namespace Слежение_за_измерениями_контроллеров
             this.listViewSHR_LR.Items.Clear();
             for (int i = 0; i < count; i++)
             {
-                ListViewItem itm = new ListViewItem(new string[] { res[i].Split((char)1)[1], res[i].Split((char)1)[2] });
+                ListViewItem itm = new ListViewItem(new string[] { res[i].Split((char)1)[1], res[i].Split((char)1)[2], res[i].Split((char)1)[0] });
                 this.listViewSHR_LR.Items.Add(itm);
             }
         }
@@ -45,7 +43,7 @@ namespace Слежение_за_измерениями_контроллеров
             this.listViewZN.Items.Clear();
             for (int i = 0; i < count; i++)
             {
-                ListViewItem itm = new ListViewItem(new string[] { res[i].Split((char)1)[1], res[i].Split((char)1)[2] });
+                ListViewItem itm = new ListViewItem(new string[] { res[i].Split((char)1)[1], res[i].Split((char)1)[2], res[i].Split((char)1)[0] });
                 this.listViewZN.Items.Add(itm);
             }
         }
@@ -105,6 +103,8 @@ namespace Слежение_за_измерениями_контроллеров
 
         private void добавитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            ListView lb = (ListView)((ContextMenuStrip)((ToolStripMenuItem)sender).Owner).SourceControl;
+            if (lb.Name == "listViewSHR_LR")
             {
                 InputZNLR frm = new InputZNLR();
                 frm.Text = "Добавление нового ШР/ЛР";
@@ -121,8 +121,90 @@ namespace Слежение_за_измерениями_контроллеров
 
                 }
             }
+            else
+            {
+                InputZNLR frm = new InputZNLR();
+                frm.Text = "Добавление нового ЗН";
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    string SQL = "INSERT INTO ZN(OPC_name,  OPC_Tag, inversion, TC_id) VALUES('" + frm.OPC_Name_Text.Text + "', '" + frm.OPC_Tag.Text + "'," +
+                        (frm.checkBoxInversion.Checked ? 1 : 0).ToString() + ", " + this.Tag.ToString() + ");";
+                    Db Dbase = new Db("OPCLogger", "192.168.100.16", "sa", "dvddecrypter");
+                    Dbase.AddToDB(SQL);
+                    UpdateZN(this.Tag.ToString());
 
+                }
+            }
+        }
 
+        private void редактироватьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListView lb = (ListView)((ContextMenuStrip)((ToolStripMenuItem)sender).Owner).SourceControl;
+            Db Dbase = new Db("OPCLogger", "192.168.100.16", "sa", "dvddecrypter");
+            string[] res = new string[10];
+            int count = 0;
+            if (lb.Name == "listViewSHR_LR")
+            {
+                if (listViewSHR_LR.SelectedIndices.Count > 0)
+                {
+                    string SQL = "SELECT * FROM SHR_LR WHERE id = " + listViewSHR_LR.Items[listViewSHR_LR.SelectedIndices[0]].SubItems[2].Text;
+                    Dbase.GetDB(SQL, ref res, ref count);
+                    InputZNLR frm = new InputZNLR();
+                    frm.Text = "Редактирование " + listViewSHR_LR.Items[listViewSHR_LR.SelectedIndices[0]].Text;
+                    frm.OPC_Name_Text.Text = res[0].Split((char)1)[1];// listViewSHR_LR.Items[listViewSHR_LR.SelectedIndices[0]].Text;
+                    frm.OPC_Tag.Text = res[0].Split((char)1)[2];// listViewSHR_LR.Items[listViewSHR_LR.SelectedIndices[0]].SubItems[1].Text;
+                    frm.checkBoxInversion.Checked = (res[0].Split((char)1)[2] == "1") ? true : false;
+                    if (frm.ShowDialog() == DialogResult.OK)
+                    {
+                        SQL = "UPDATE SHR_LR SET OPC_name = '" + frm.OPC_Name_Text.Text + "', OPC_Tag = '" + frm.OPC_Tag.Text + "', " + ((frm.checkBoxInversion.Checked)? "1":"0") +
+                            "WHERE id = " + listViewSHR_LR.Items[listViewSHR_LR.SelectedIndices[0]].SubItems[2].Text;
+                        Dbase.AddToDB(SQL);
+                    }
+                }
+            }
+            else
+            {
+                if (listViewZN.SelectedIndices.Count > 0)
+                {
+                    string SQL = "SELECT * FROM ZN WHERE id = " + listViewZN.Items[listViewZN.SelectedIndices[0]].SubItems[2].Text;
+                    Dbase.GetDB(SQL, ref res, ref count);
+                    InputZNLR frm = new InputZNLR();
+                    frm.Text = "Редактирование " + listViewZN.Items[listViewZN.SelectedIndices[0]].Text;
+                    frm.OPC_Name_Text.Text = res[0].Split((char)1)[1];//listViewZN.Items[listViewZN.SelectedIndices[0]].Text;
+                    frm.OPC_Tag.Text = res[0].Split((char)1)[2]; ;// listViewZN.Items[listViewZN.SelectedIndices[0]].SubItems[1].Text;
+                    frm.checkBoxInversion.Checked = (res[0].Split((char)1)[2] == "1") ? true : false;
+                    if (frm.ShowDialog() == DialogResult.OK)
+                    {
+                        SQL = "UPDATE ZN SET OPC_name = '" + frm.OPC_Name_Text.Text + "', OPC_Tag = '" + frm.OPC_Tag.Text + "', " + ((frm.checkBoxInversion.Checked) ? "1" : "0") +
+                            "WHERE id = " + listViewZN.Items[listViewZN.SelectedIndices[0]].SubItems[2].Text;
+                        Dbase.AddToDB(SQL);
+                    }
+                }
+            }
+        }
+
+        private void удалитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListView lb = (ListView)((ContextMenuStrip)((ToolStripMenuItem)sender).Owner).SourceControl;
+            Db Dbase = new Db("OPCLogger", "192.168.100.16", "sa", "dvddecrypter");
+            if (lb.Name == "listViewSHR_LR")
+            {
+                if (listViewSHR_LR.SelectedIndices.Count > 0)
+                {
+                    string SQL = "DELETE FROM SHR_LR WHERE id = " + listViewSHR_LR.Items[listViewSHR_LR.SelectedIndices[0]].SubItems[2].Text;
+                    if (MessageBox.Show("Вы уверены, что хотите удалить " + listViewSHR_LR.Items[listViewSHR_LR.SelectedIndices[0]].SubItems[0].Text + " ?", "Удаление " + listViewSHR_LR.Items[listViewSHR_LR.SelectedIndices[0]].SubItems[0].Text, MessageBoxButtons.OKCancel) == DialogResult.OK)
+                        Dbase.AddToDB(SQL);
+                }
+            }
+            else
+            {
+                if (listViewZN.SelectedIndices.Count > 0)
+                {
+                    string SQL = "DELETE FROM ZN WHERE id = " + listViewSHR_LR.Items[listViewSHR_LR.SelectedIndices[0]].SubItems[2].Text;
+                    if (MessageBox.Show("Вы уверены, что хотите удалить " + listViewSHR_LR.Items[listViewSHR_LR.SelectedIndices[0]].SubItems[0].Text + " ?", "Удаление " + listViewSHR_LR.Items[listViewSHR_LR.SelectedIndices[0]].SubItems[0].Text, MessageBoxButtons.OKCancel) == DialogResult.OK)
+                        Dbase.AddToDB(SQL);
+                }
+            }
         }
     }
 }

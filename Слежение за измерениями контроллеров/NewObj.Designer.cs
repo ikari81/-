@@ -39,14 +39,12 @@
             this.Inversion = new System.Windows.Forms.CheckBox();
             this.OKbutton = new System.Windows.Forms.Button();
             this.Cancelbutton = new System.Windows.Forms.Button();
-            this.buttonSHLR = new System.Windows.Forms.Button();
             this.listViewSHR_LR = new System.Windows.Forms.ListView();
             this.Shr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SHR_Tag = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.listViewZN = new System.Windows.Forms.ListView();
             this.Zn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderTag = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.buttonZN = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.добавитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.редактироватьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,6 +52,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -140,27 +140,18 @@
             this.Cancelbutton.Text = "Отмена";
             this.Cancelbutton.UseVisualStyleBackColor = true;
             // 
-            // buttonSHLR
-            // 
-            this.buttonSHLR.Location = new System.Drawing.Point(8, 155);
-            this.buttonSHLR.Name = "buttonSHLR";
-            this.buttonSHLR.Size = new System.Drawing.Size(76, 23);
-            this.buttonSHLR.TabIndex = 13;
-            this.buttonSHLR.Text = "Добавить";
-            this.buttonSHLR.UseVisualStyleBackColor = true;
-            this.buttonSHLR.Click += new System.EventHandler(this.button1_Click);
-            // 
             // listViewSHR_LR
             // 
             this.listViewSHR_LR.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Shr,
-            this.SHR_Tag});
+            this.SHR_Tag,
+            this.columnHeader1});
             this.listViewSHR_LR.ContextMenuStrip = this.contextMenuStrip1;
             this.listViewSHR_LR.FullRowSelect = true;
             this.listViewSHR_LR.GridLines = true;
-            this.listViewSHR_LR.Location = new System.Drawing.Point(8, 184);
+            this.listViewSHR_LR.Location = new System.Drawing.Point(8, 143);
             this.listViewSHR_LR.Name = "listViewSHR_LR";
-            this.listViewSHR_LR.Size = new System.Drawing.Size(212, 188);
+            this.listViewSHR_LR.Size = new System.Drawing.Size(212, 229);
             this.listViewSHR_LR.TabIndex = 14;
             this.listViewSHR_LR.UseCompatibleStateImageBehavior = false;
             this.listViewSHR_LR.View = System.Windows.Forms.View.Details;
@@ -179,12 +170,13 @@
             // 
             this.listViewZN.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Zn,
-            this.columnHeaderTag});
+            this.columnHeaderTag,
+            this.columnHeader2});
             this.listViewZN.ContextMenuStrip = this.contextMenuStrip1;
             this.listViewZN.GridLines = true;
-            this.listViewZN.Location = new System.Drawing.Point(252, 184);
+            this.listViewZN.Location = new System.Drawing.Point(252, 143);
             this.listViewZN.Name = "listViewZN";
-            this.listViewZN.Size = new System.Drawing.Size(214, 188);
+            this.listViewZN.Size = new System.Drawing.Size(214, 229);
             this.listViewZN.TabIndex = 15;
             this.listViewZN.UseCompatibleStateImageBehavior = false;
             this.listViewZN.View = System.Windows.Forms.View.Details;
@@ -198,16 +190,6 @@
             // 
             this.columnHeaderTag.Text = "Тэг";
             this.columnHeaderTag.Width = 100;
-            // 
-            // buttonZN
-            // 
-            this.buttonZN.Location = new System.Drawing.Point(252, 155);
-            this.buttonZN.Name = "buttonZN";
-            this.buttonZN.Size = new System.Drawing.Size(76, 23);
-            this.buttonZN.TabIndex = 16;
-            this.buttonZN.Text = "Добавить";
-            this.buttonZN.UseVisualStyleBackColor = true;
-            this.buttonZN.Click += new System.EventHandler(this.buttonZN_Click);
             // 
             // contextMenuStrip1
             // 
@@ -230,12 +212,14 @@
             this.редактироватьToolStripMenuItem.Name = "редактироватьToolStripMenuItem";
             this.редактироватьToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.редактироватьToolStripMenuItem.Text = "Редактировать";
+            this.редактироватьToolStripMenuItem.Click += new System.EventHandler(this.редактироватьToolStripMenuItem_Click);
             // 
             // удалитьToolStripMenuItem
             // 
             this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
             this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.удалитьToolStripMenuItem.Text = "Удалить";
+            this.удалитьToolStripMenuItem.Click += new System.EventHandler(this.удалитьToolStripMenuItem_Click);
             // 
             // label3
             // 
@@ -274,10 +258,8 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.buttonZN);
             this.Controls.Add(this.listViewZN);
             this.Controls.Add(this.listViewSHR_LR);
-            this.Controls.Add(this.buttonSHLR);
             this.Controls.Add(this.Cancelbutton);
             this.Controls.Add(this.OKbutton);
             this.Controls.Add(this.Inversion);
@@ -310,12 +292,10 @@
         public System.Windows.Forms.TextBox ObjectQ;
         public System.Windows.Forms.TextBox ObjectPower;
         public System.Windows.Forms.CheckBox Inversion;
-        private System.Windows.Forms.Button buttonSHLR;
         private System.Windows.Forms.ListView listViewSHR_LR;
         private System.Windows.Forms.ListView listViewZN;
         private System.Windows.Forms.ColumnHeader Shr;
         private System.Windows.Forms.ColumnHeader Zn;
-        private System.Windows.Forms.Button buttonZN;
         private System.Windows.Forms.ColumnHeader SHR_Tag;
         private System.Windows.Forms.ColumnHeader columnHeaderTag;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
@@ -325,5 +305,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
     }
 }
