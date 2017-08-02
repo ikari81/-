@@ -39,7 +39,7 @@ namespace Слежение_за_измерениями_контроллеров
         OPCServer opcServer;
         Thread[] opc;
         bool RELOAD = false;
-        bool offline = true;
+        bool offline = false;
         
         //Загружаем настройки
         void LoadPrefs()
@@ -389,13 +389,14 @@ namespace Слежение_за_измерениями_контроллеров
             opcServer = new OPCServer();
             var OPCName = "MIR.OPCServerOm3";
             opcServer.Guid = OpcDaClient.GetServerGuid(OPCName);
-            if (!offline)
+            //if (!offline)
                 if (OpcDaClient.GetServerGuid(OPCName).ToString() == "00000000-0000-0000-0000-000000000000")
                 {
-                    MessageBox.Show("Не могу найти указанный сервер");
-                    this.Close();
-                    Application.ExitThread();
-                    Application.Exit();
+                //MessageBox.Show("Не могу найти указанный сервер");
+                //this.Close();
+                //Application.ExitThread();
+                //Application.Exit();
+                offline = true;
                 }
             LoadPrefs();
             if (!offline)

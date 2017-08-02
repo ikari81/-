@@ -159,6 +159,7 @@ namespace Слежение_за_измерениями_контроллеров
                         SQL = "UPDATE SHR_LR SET OPC_name = '" + frm.OPC_Name_Text.Text + "', OPC_Tag = '" + frm.OPC_Tag.Text + "', " + ((frm.checkBoxInversion.Checked)? "1":"0") +
                             "WHERE id = " + listViewSHR_LR.Items[listViewSHR_LR.SelectedIndices[0]].SubItems[2].Text;
                         Dbase.AddToDB(SQL);
+                        UpdateSHR_LR(this.Tag.ToString());
                     }
                 }
             }
@@ -178,6 +179,7 @@ namespace Слежение_за_измерениями_контроллеров
                         SQL = "UPDATE ZN SET OPC_name = '" + frm.OPC_Name_Text.Text + "', OPC_Tag = '" + frm.OPC_Tag.Text + "', " + ((frm.checkBoxInversion.Checked) ? "1" : "0") +
                             "WHERE id = " + listViewZN.Items[listViewZN.SelectedIndices[0]].SubItems[2].Text;
                         Dbase.AddToDB(SQL);
+                        UpdateZN(this.Tag.ToString());
                     }
                 }
             }
@@ -194,6 +196,7 @@ namespace Слежение_за_измерениями_контроллеров
                     string SQL = "DELETE FROM SHR_LR WHERE id = " + listViewSHR_LR.Items[listViewSHR_LR.SelectedIndices[0]].SubItems[2].Text;
                     if (MessageBox.Show("Вы уверены, что хотите удалить " + listViewSHR_LR.Items[listViewSHR_LR.SelectedIndices[0]].SubItems[0].Text + " ?", "Удаление " + listViewSHR_LR.Items[listViewSHR_LR.SelectedIndices[0]].SubItems[0].Text, MessageBoxButtons.OKCancel) == DialogResult.OK)
                         Dbase.AddToDB(SQL);
+                    UpdateSHR_LR(this.Tag.ToString());
                 }
             }
             else
@@ -203,6 +206,7 @@ namespace Слежение_за_измерениями_контроллеров
                     string SQL = "DELETE FROM ZN WHERE id = " + listViewSHR_LR.Items[listViewSHR_LR.SelectedIndices[0]].SubItems[2].Text;
                     if (MessageBox.Show("Вы уверены, что хотите удалить " + listViewSHR_LR.Items[listViewSHR_LR.SelectedIndices[0]].SubItems[0].Text + " ?", "Удаление " + listViewSHR_LR.Items[listViewSHR_LR.SelectedIndices[0]].SubItems[0].Text, MessageBoxButtons.OKCancel) == DialogResult.OK)
                         Dbase.AddToDB(SQL);
+                    UpdateZN(this.Tag.ToString());
                 }
             }
         }
