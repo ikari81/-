@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Слежение_за_измерениями_контроллеров.Db" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAGAAAAAAAABAAQAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Db.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Слежение_за_измерениями_контроллеров.MainForm" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAgIAiRICAYAAIACoCBAAAqAgAQAARAAJEIDAAAIAA=</HashCode>
+      <FileName>Form1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Слежение_за_измерениями_контроллеров.InputZNLR" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAEAACABAQCgAECAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>InputZNLR.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Слежение_за_измерениями_контроллеров.ListViewHelper" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACAAAAgAAAIAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>ListViewHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Слежение_за_измерениями_контроллеров.LiveData" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAgAgAACAAgAIAAACAAAACAAAAIEAAAAAgAAAAAQA=</HashCode>
+      <FileName>LiveData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Слежение_за_измерениями_контроллеров.Logger" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAACAAAAAAACAAAAQABAAAgAEIAAAAAAAAAAA=</HashCode>
+      <FileName>Logger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Слежение_за_измерениями_контроллеров.NewObj" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAgAAAQAQCAAAJAAAACAIAACAAAAQEAAAECEAAlUAAQ=</HashCode>
+      <FileName>NewObj.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Слежение_за_измерениями_контроллеров.Program" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAABABAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Слежение_за_измерениями_контроллеров.Waiting" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAQACAAAAAAAACAAAACAAAAIAAACAAAAAIAAAE=</HashCode>
+      <FileName>Waiting.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Слежение_за_измерениями_контроллеров.Properties.Resources" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Слежение_за_измерениями_контроллеров.Properties.Settings" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="Слежение_за_измерениями_контроллеров.SHR_LR_ZN" Collapsed="true">
+    <Position X="2.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Form1.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Слежение_за_измерениями_контроллеров.OPC" Collapsed="true">
+    <Position X="0.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAQCAAAAAAAAAAEgBAAAAAAAAAAA=</HashCode>
+      <FileName>Form1.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Enum Name="Слежение_за_измерениями_контроллеров.ListViewExtendedStyles" Collapsed="true">
+    <Position X="0.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAIAABAIAAAAAQAAAAQEAAAFAAAQQAEDGICQAJAAAA=</HashCode>
+      <FileName>ListViewExtendedStyles.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Слежение_за_измерениями_контроллеров.ListViewMessages" Collapsed="true">
+    <Position X="2.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAIAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>ListViewMessages.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

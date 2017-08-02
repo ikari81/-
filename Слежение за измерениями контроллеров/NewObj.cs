@@ -22,11 +22,11 @@ namespace Слежение_за_измерениями_контроллеров
         void UpdateSHR_LR(string ID)
         {
             Db Dbase = new Db("OPCLogger", "192.168.100.16", "sa", "dvddecrypter");
-            string[] res = new string[10];
+            string[] res = new string[20];
             int count = 0;
             string SQL = "SELECT * FROM SHR_LR WHERE TC_id = " + ID;
             Dbase.GetDB(SQL, ref res, ref count);
-            //this.listViewSHR_LR.Clear();
+            this.listViewSHR_LR.Items.Clear();
             for (int i = 0; i < count; i++)
             {
                 ListViewItem itm = new ListViewItem(new string[] { res[i].Split((char)1)[1], res[i].Split((char)1)[2] });
@@ -67,7 +67,6 @@ namespace Слежение_за_измерениями_контроллеров
             this.Tag = ID;
 
             UpdateSHR_LR(ID);
-
             UpdateZN(ID);
         }
 
@@ -102,6 +101,28 @@ namespace Слежение_за_измерениями_контроллеров
                 UpdateZN(this.Tag.ToString());
 
             }
+        }
+
+        private void добавитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            {
+                InputZNLR frm = new InputZNLR();
+                frm.Text = "Добавление нового ШР/ЛР";
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    string SQL = "INSERT INTO SHR_LR(OPC_name,  OPC_Tag, inversion, TC_id) VALUES('" + frm.OPC_Name_Text.Text + "', '" + frm.OPC_Tag.Text + "'," +
+                        (frm.checkBoxInversion.Checked ? 1 : 0).ToString() + ", " + this.Tag.ToString() + ");";
+                    MessageBox.Show(SQL);
+                    Db Dbase = new Db("OPCLogger", "192.168.100.16", "sa", "dvddecrypter");
+                    if (!Dbase.AddToDB(SQL))
+                        MessageBox.Show("Error LR");
+                    else
+                        UpdateSHR_LR(this.Tag.ToString());
+
+                }
+            }
+
+
         }
     }
 }

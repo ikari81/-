@@ -28,27 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.ObjectName = new System.Windows.Forms.TextBox();
             this.ObjectTag = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.ObjectCurrent = new System.Windows.Forms.TextBox();
             this.ObjectQ = new System.Windows.Forms.TextBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.ObjectPower = new System.Windows.Forms.TextBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.Inversion = new System.Windows.Forms.CheckBox();
             this.OKbutton = new System.Windows.Forms.Button();
             this.Cancelbutton = new System.Windows.Forms.Button();
             this.buttonSHLR = new System.Windows.Forms.Button();
             this.listViewSHR_LR = new System.Windows.Forms.ListView();
             this.Shr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.SHR_Tag = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.listViewZN = new System.Windows.Forms.ListView();
             this.Zn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.buttonZN = new System.Windows.Forms.Button();
-            this.SHR_Tag = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderTag = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.buttonZN = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.добавитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.редактироватьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -83,16 +89,6 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "ОРС-тэг";
             // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(265, 5);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(45, 17);
-            this.checkBox1.TabIndex = 4;
-            this.checkBox1.Text = "Ток";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
             // ObjectCurrent
             // 
             this.ObjectCurrent.Location = new System.Drawing.Point(265, 25);
@@ -102,37 +98,17 @@
             // 
             // ObjectQ
             // 
-            this.ObjectQ.Location = new System.Drawing.Point(265, 71);
+            this.ObjectQ.Location = new System.Drawing.Point(265, 117);
             this.ObjectQ.Name = "ObjectQ";
             this.ObjectQ.Size = new System.Drawing.Size(192, 20);
             this.ObjectQ.TabIndex = 7;
             // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(265, 51);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(141, 17);
-            this.checkBox2.TabIndex = 6;
-            this.checkBox2.Text = "Мощность реактивная";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
             // ObjectPower
             // 
-            this.ObjectPower.Location = new System.Drawing.Point(265, 117);
+            this.ObjectPower.Location = new System.Drawing.Point(265, 68);
             this.ObjectPower.Name = "ObjectPower";
             this.ObjectPower.Size = new System.Drawing.Size(192, 20);
             this.ObjectPower.TabIndex = 9;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(265, 97);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(79, 17);
-            this.checkBox3.TabIndex = 8;
-            this.checkBox3.Text = "Мощность";
-            this.checkBox3.UseVisualStyleBackColor = true;
             // 
             // Inversion
             // 
@@ -179,11 +155,12 @@
             this.listViewSHR_LR.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Shr,
             this.SHR_Tag});
+            this.listViewSHR_LR.ContextMenuStrip = this.contextMenuStrip1;
             this.listViewSHR_LR.FullRowSelect = true;
             this.listViewSHR_LR.GridLines = true;
             this.listViewSHR_LR.Location = new System.Drawing.Point(8, 184);
             this.listViewSHR_LR.Name = "listViewSHR_LR";
-            this.listViewSHR_LR.Size = new System.Drawing.Size(212, 177);
+            this.listViewSHR_LR.Size = new System.Drawing.Size(212, 188);
             this.listViewSHR_LR.TabIndex = 14;
             this.listViewSHR_LR.UseCompatibleStateImageBehavior = false;
             this.listViewSHR_LR.View = System.Windows.Forms.View.Details;
@@ -193,15 +170,21 @@
             this.Shr.Text = "ШР и ЛР";
             this.Shr.Width = 107;
             // 
+            // SHR_Tag
+            // 
+            this.SHR_Tag.Text = "Тэг";
+            this.SHR_Tag.Width = 100;
+            // 
             // listViewZN
             // 
             this.listViewZN.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Zn,
             this.columnHeaderTag});
+            this.listViewZN.ContextMenuStrip = this.contextMenuStrip1;
             this.listViewZN.GridLines = true;
             this.listViewZN.Location = new System.Drawing.Point(252, 184);
             this.listViewZN.Name = "listViewZN";
-            this.listViewZN.Size = new System.Drawing.Size(214, 177);
+            this.listViewZN.Size = new System.Drawing.Size(214, 188);
             this.listViewZN.TabIndex = 15;
             this.listViewZN.UseCompatibleStateImageBehavior = false;
             this.listViewZN.View = System.Windows.Forms.View.Details;
@@ -210,6 +193,11 @@
             // 
             this.Zn.Text = "ЗН";
             this.Zn.Width = 92;
+            // 
+            // columnHeaderTag
+            // 
+            this.columnHeaderTag.Text = "Тэг";
+            this.columnHeaderTag.Width = 100;
             // 
             // buttonZN
             // 
@@ -221,15 +209,60 @@
             this.buttonZN.UseVisualStyleBackColor = true;
             this.buttonZN.Click += new System.EventHandler(this.buttonZN_Click);
             // 
-            // SHR_Tag
+            // contextMenuStrip1
             // 
-            this.SHR_Tag.Text = "Тэг";
-            this.SHR_Tag.Width = 100;
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.добавитьToolStripMenuItem,
+            this.редактироватьToolStripMenuItem,
+            this.удалитьToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(155, 92);
             // 
-            // columnHeaderTag
+            // добавитьToolStripMenuItem
             // 
-            this.columnHeaderTag.Text = "Тэг";
-            this.columnHeaderTag.Width = 100;
+            this.добавитьToolStripMenuItem.Name = "добавитьToolStripMenuItem";
+            this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.добавитьToolStripMenuItem.Text = "Добавить";
+            this.добавитьToolStripMenuItem.Click += new System.EventHandler(this.добавитьToolStripMenuItem_Click);
+            // 
+            // редактироватьToolStripMenuItem
+            // 
+            this.редактироватьToolStripMenuItem.Name = "редактироватьToolStripMenuItem";
+            this.редактироватьToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.редактироватьToolStripMenuItem.Text = "Редактировать";
+            // 
+            // удалитьToolStripMenuItem
+            // 
+            this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
+            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.удалитьToolStripMenuItem.Text = "Удалить";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(262, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(26, 13);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "Ток";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(262, 52);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(110, 13);
+            this.label4.TabIndex = 19;
+            this.label4.Text = "Мощность активная";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(262, 101);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(122, 13);
+            this.label5.TabIndex = 20;
+            this.label5.Text = "Мощность реактивная";
             // 
             // NewObj
             // 
@@ -238,6 +271,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.Cancelbutton;
             this.ClientSize = new System.Drawing.Size(478, 426);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.buttonZN);
             this.Controls.Add(this.listViewZN);
             this.Controls.Add(this.listViewSHR_LR);
@@ -246,11 +282,8 @@
             this.Controls.Add(this.OKbutton);
             this.Controls.Add(this.Inversion);
             this.Controls.Add(this.ObjectPower);
-            this.Controls.Add(this.checkBox3);
             this.Controls.Add(this.ObjectQ);
-            this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.ObjectCurrent);
-            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.ObjectTag);
             this.Controls.Add(this.ObjectName);
@@ -259,6 +292,7 @@
             this.Name = "NewObj";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NewObj";
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -272,12 +306,9 @@
         private System.Windows.Forms.Button Cancelbutton;
         public System.Windows.Forms.TextBox ObjectName;
         public System.Windows.Forms.TextBox ObjectTag;
-        public System.Windows.Forms.CheckBox checkBox1;
         public System.Windows.Forms.TextBox ObjectCurrent;
         public System.Windows.Forms.TextBox ObjectQ;
-        public System.Windows.Forms.CheckBox checkBox2;
         public System.Windows.Forms.TextBox ObjectPower;
-        public System.Windows.Forms.CheckBox checkBox3;
         public System.Windows.Forms.CheckBox Inversion;
         private System.Windows.Forms.Button buttonSHLR;
         private System.Windows.Forms.ListView listViewSHR_LR;
@@ -287,5 +318,12 @@
         private System.Windows.Forms.Button buttonZN;
         private System.Windows.Forms.ColumnHeader SHR_Tag;
         private System.Windows.Forms.ColumnHeader columnHeaderTag;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem добавитьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem редактироватьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem удалитьToolStripMenuItem;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }

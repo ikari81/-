@@ -39,7 +39,7 @@ namespace Слежение_за_измерениями_контроллеров
         OPCServer opcServer;
         Thread[] opc;
         bool RELOAD = false;
-        bool offline = false;
+        bool offline = true;
         
         //Загружаем настройки
         void LoadPrefs()
