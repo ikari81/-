@@ -52,8 +52,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -144,8 +142,7 @@
             // 
             this.listViewSHR_LR.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Shr,
-            this.SHR_Tag,
-            this.columnHeader1});
+            this.SHR_Tag});
             this.listViewSHR_LR.ContextMenuStrip = this.contextMenuStrip1;
             this.listViewSHR_LR.FullRowSelect = true;
             this.listViewSHR_LR.GridLines = true;
@@ -170,8 +167,7 @@
             // 
             this.listViewZN.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Zn,
-            this.columnHeaderTag,
-            this.columnHeader2});
+            this.columnHeaderTag});
             this.listViewZN.ContextMenuStrip = this.contextMenuStrip1;
             this.listViewZN.GridLines = true;
             this.listViewZN.Location = new System.Drawing.Point(252, 143);
@@ -198,7 +194,7 @@
             this.редактироватьToolStripMenuItem,
             this.удалитьToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(155, 92);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(155, 70);
             // 
             // добавитьToolStripMenuItem
             // 
@@ -305,7 +301,5 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
     }
 }
