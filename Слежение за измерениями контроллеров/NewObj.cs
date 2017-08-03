@@ -28,6 +28,11 @@ namespace Слежение_за_измерениями_контроллеров
             for (int i = 0; i < count; i++)
             {
                 ListViewItem itm = new ListViewItem(new string[] { res[i].Split((char)1)[1], res[i].Split((char)1)[2], res[i].Split((char)1)[0] });
+                if (res[i].Split((char)1)[3] == "1")
+                {
+                    itm.BackColor = Color.Red;
+                    itm.ForeColor = Color.White;
+                }
                 this.listViewSHR_LR.Items.Add(itm);
             }
         }
@@ -44,6 +49,11 @@ namespace Слежение_за_измерениями_контроллеров
             for (int i = 0; i < count; i++)
             {
                 ListViewItem itm = new ListViewItem(new string[] { res[i].Split((char)1)[1], res[i].Split((char)1)[2], res[i].Split((char)1)[0] });
+                if (res[i].Split((char)1)[3] == "1")
+                {
+                    itm.BackColor = Color.Red;
+                    itm.ForeColor = Color.White;
+                }
                 this.listViewZN.Items.Add(itm);
             }
         }
