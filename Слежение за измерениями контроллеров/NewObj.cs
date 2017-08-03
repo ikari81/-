@@ -150,14 +150,16 @@ namespace Слежение_за_измерениями_контроллеров
                     string SQL = "SELECT * FROM SHR_LR WHERE id = " + listViewSHR_LR.Items[listViewSHR_LR.SelectedIndices[0]].SubItems[2].Text;
                     Dbase.GetDB(SQL, ref res, ref count);
                     InputZNLR frm = new InputZNLR();
-                    frm.Text = "Редактирование " + listViewSHR_LR.Items[listViewSHR_LR.SelectedIndices[0]].Text;
+                    frm.Text = "1Редактирование " + listViewSHR_LR.Items[listViewSHR_LR.SelectedIndices[0]].Text;
                     frm.OPC_Name_Text.Text = res[0].Split((char)1)[1];// listViewSHR_LR.Items[listViewSHR_LR.SelectedIndices[0]].Text;
                     frm.OPC_Tag.Text = res[0].Split((char)1)[2];// listViewSHR_LR.Items[listViewSHR_LR.SelectedIndices[0]].SubItems[1].Text;
                     frm.checkBoxInversion.Checked = (res[0].Split((char)1)[2] == "1") ? true : false;
+                    SQL = "UPDATE SHR_LR SET OPC_name = '" + frm.OPC_Name_Text.Text + "', OPC_Tag = '" + frm.OPC_Tag.Text + "', " + ((frm.checkBoxInversion.Checked) ? "1" : "0") +
+                           "WHERE id = " + listViewSHR_LR.Items[listViewSHR_LR.SelectedIndices[0]].SubItems[2].Text;
+                    MessageBox.Show(SQL);
                     if (frm.ShowDialog() == DialogResult.OK)
                     {
-                        SQL = "UPDATE SHR_LR SET OPC_name = '" + frm.OPC_Name_Text.Text + "', OPC_Tag = '" + frm.OPC_Tag.Text + "', " + ((frm.checkBoxInversion.Checked)? "1":"0") +
-                            "WHERE id = " + listViewSHR_LR.Items[listViewSHR_LR.SelectedIndices[0]].SubItems[2].Text;
+                       
                         Dbase.AddToDB(SQL);
                         UpdateSHR_LR(this.Tag.ToString());
                     }
