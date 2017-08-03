@@ -42,13 +42,13 @@
             this.listViewSHR_LR = new System.Windows.Forms.ListView();
             this.Shr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SHR_Tag = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.listViewZN = new System.Windows.Forms.ListView();
-            this.Zn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderTag = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.добавитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.редактироватьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listViewZN = new System.Windows.Forms.ListView();
+            this.Zn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderTag = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -89,23 +89,23 @@
             // 
             // ObjectCurrent
             // 
-            this.ObjectCurrent.Location = new System.Drawing.Point(265, 25);
+            this.ObjectCurrent.Location = new System.Drawing.Point(253, 25);
             this.ObjectCurrent.Name = "ObjectCurrent";
-            this.ObjectCurrent.Size = new System.Drawing.Size(192, 20);
+            this.ObjectCurrent.Size = new System.Drawing.Size(213, 20);
             this.ObjectCurrent.TabIndex = 5;
             // 
             // ObjectQ
             // 
-            this.ObjectQ.Location = new System.Drawing.Point(265, 117);
+            this.ObjectQ.Location = new System.Drawing.Point(252, 117);
             this.ObjectQ.Name = "ObjectQ";
-            this.ObjectQ.Size = new System.Drawing.Size(192, 20);
+            this.ObjectQ.Size = new System.Drawing.Size(214, 20);
             this.ObjectQ.TabIndex = 7;
             // 
             // ObjectPower
             // 
-            this.ObjectPower.Location = new System.Drawing.Point(265, 68);
+            this.ObjectPower.Location = new System.Drawing.Point(253, 68);
             this.ObjectPower.Name = "ObjectPower";
-            this.ObjectPower.Size = new System.Drawing.Size(192, 20);
+            this.ObjectPower.Size = new System.Drawing.Size(213, 20);
             this.ObjectPower.TabIndex = 9;
             // 
             // Inversion
@@ -163,30 +163,6 @@
             this.SHR_Tag.Text = "Тэг";
             this.SHR_Tag.Width = 100;
             // 
-            // listViewZN
-            // 
-            this.listViewZN.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Zn,
-            this.columnHeaderTag});
-            this.listViewZN.ContextMenuStrip = this.contextMenuStrip1;
-            this.listViewZN.GridLines = true;
-            this.listViewZN.Location = new System.Drawing.Point(252, 143);
-            this.listViewZN.Name = "listViewZN";
-            this.listViewZN.Size = new System.Drawing.Size(214, 229);
-            this.listViewZN.TabIndex = 15;
-            this.listViewZN.UseCompatibleStateImageBehavior = false;
-            this.listViewZN.View = System.Windows.Forms.View.Details;
-            // 
-            // Zn
-            // 
-            this.Zn.Text = "ЗН";
-            this.Zn.Width = 92;
-            // 
-            // columnHeaderTag
-            // 
-            this.columnHeaderTag.Text = "Тэг";
-            this.columnHeaderTag.Width = 100;
-            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -217,10 +193,35 @@
             this.удалитьToolStripMenuItem.Text = "Удалить";
             this.удалитьToolStripMenuItem.Click += new System.EventHandler(this.удалитьToolStripMenuItem_Click);
             // 
+            // listViewZN
+            // 
+            this.listViewZN.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Zn,
+            this.columnHeaderTag});
+            this.listViewZN.ContextMenuStrip = this.contextMenuStrip1;
+            this.listViewZN.FullRowSelect = true;
+            this.listViewZN.GridLines = true;
+            this.listViewZN.Location = new System.Drawing.Point(252, 143);
+            this.listViewZN.Name = "listViewZN";
+            this.listViewZN.Size = new System.Drawing.Size(214, 229);
+            this.listViewZN.TabIndex = 15;
+            this.listViewZN.UseCompatibleStateImageBehavior = false;
+            this.listViewZN.View = System.Windows.Forms.View.Details;
+            // 
+            // Zn
+            // 
+            this.Zn.Text = "ЗН";
+            this.Zn.Width = 92;
+            // 
+            // columnHeaderTag
+            // 
+            this.columnHeaderTag.Text = "Тэг";
+            this.columnHeaderTag.Width = 100;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(262, 9);
+            this.label3.Location = new System.Drawing.Point(250, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(26, 13);
             this.label3.TabIndex = 18;
@@ -229,7 +230,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(262, 52);
+            this.label4.Location = new System.Drawing.Point(250, 52);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(110, 13);
             this.label4.TabIndex = 19;
@@ -238,7 +239,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(262, 101);
+            this.label5.Location = new System.Drawing.Point(250, 101);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(122, 13);
             this.label5.TabIndex = 20;

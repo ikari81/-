@@ -433,8 +433,10 @@ namespace Слежение_за_измерениями_контроллеров
             {
                 int cnt = 0;
                 for (int i = 0; i < PCount; i++)
+                {
                     if (opc[i].ThreadState == ThreadState.Running)
                         cnt++;
+                }
                 if (cnt == 0)
                     break;
             }
