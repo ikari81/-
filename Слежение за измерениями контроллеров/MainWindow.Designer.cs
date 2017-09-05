@@ -33,7 +33,6 @@
             this.ObjName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.State = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.DateTimes = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.редактироватьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.liveDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,8 +49,7 @@
             this.MainView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ObjName,
             this.State,
-            this.DateTimes,
-            this.columnHeader1});
+            this.DateTimes});
             this.MainView.ContextMenuStrip = this.contextMenuStrip1;
             this.MainView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainView.FullRowSelect = true;
@@ -77,10 +75,6 @@
             // 
             this.DateTimes.Text = "Дата последней проверки";
             this.DateTimes.Width = 159;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Width = 136;
             // 
             // contextMenuStrip1
             // 
@@ -170,7 +164,6 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem liveDataToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem редактироватьToolStripMenuItem;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
     }
 }

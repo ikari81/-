@@ -129,8 +129,6 @@ namespace Слежение_за_измерениями_контроллеров
                 }
                 else
                     MessageBox.Show("Error shr_lr\n" + SQL + "\n" + shlr.ToString());
-
-
                 opcServer.OPCGroups.Add(Program.AllObjects[i].Group);
             }
             
@@ -138,7 +136,7 @@ namespace Слежение_за_измерениями_контроллеров
         void OPCInit()
         {
             opcServer.Connect();
-            opcServer.SetClientName("EvgenyK_OPC_client");
+            opcServer.SetClientName("EvgenyK_OPC_client_Measure_Control");
             opcServer.RegGroupsInServer();
             for (int k = 0; k < Program.AllObjects.Length; k++)
                 Program.AllObjects[k].Group.RegItemsInServer();
@@ -429,7 +427,7 @@ namespace Слежение_за_измерениями_контроллеров
             RELOAD = true;
             int PCount = opc.Length;
             new Thread(()=> { w.ShowDialog();}).Start();
-                while (true)
+            while (true)
             {
                 int cnt = 0;
                 for (int i = 0; i < PCount; i++)

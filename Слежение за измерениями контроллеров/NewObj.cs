@@ -37,7 +37,6 @@ namespace Слежение_за_измерениями_контроллеров
             }
         }
 
-
         void UpdateZN(string ID)
         {
             Db Dbase = new Db("OPCLogger", "192.168.100.16", "sa", "dvddecrypter");
@@ -161,8 +160,8 @@ namespace Слежение_за_измерениями_контроллеров
                     Dbase.GetDB(SQL, ref res, ref count);
                     InputZNLR frm = new InputZNLR();
                     frm.Text = "Редактирование " + listViewSHR_LR.Items[listViewSHR_LR.SelectedIndices[0]].Text;
-                    frm.OPC_Name_Text.Text = res[0].Split((char)1)[1];// listViewSHR_LR.Items[listViewSHR_LR.SelectedIndices[0]].Text;
-                    frm.OPC_Tag.Text = res[0].Split((char)1)[2];// listViewSHR_LR.Items[listViewSHR_LR.SelectedIndices[0]].SubItems[1].Text;
+                    frm.OPC_Name_Text.Text = res[0].Split((char)1)[1];
+                    frm.OPC_Tag.Text = res[0].Split((char)1)[2];
                     frm.checkBoxInversion.Checked = (res[0].Split((char)1)[3] == "1") ? true : false;
                     
                     if (frm.ShowDialog() == DialogResult.OK)
@@ -183,8 +182,8 @@ namespace Слежение_за_измерениями_контроллеров
                     Dbase.GetDB(SQL, ref res, ref count);
                     InputZNLR frm = new InputZNLR();
                     frm.Text = "Редактирование " + listViewZN.Items[listViewZN.SelectedIndices[0]].Text;
-                    frm.OPC_Name_Text.Text = res[0].Split((char)1)[1];//listViewZN.Items[listViewZN.SelectedIndices[0]].Text;
-                    frm.OPC_Tag.Text = res[0].Split((char)1)[2]; ;// listViewZN.Items[listViewZN.SelectedIndices[0]].SubItems[1].Text;
+                    frm.OPC_Name_Text.Text = res[0].Split((char)1)[1];
+                    frm.OPC_Tag.Text = res[0].Split((char)1)[2]; ;
                     frm.checkBoxInversion.Checked = (res[0].Split((char)1)[3] == "1") ? true : false;
                     if (frm.ShowDialog() == DialogResult.OK)
                     {
